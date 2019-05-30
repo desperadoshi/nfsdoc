@@ -10,8 +10,8 @@ lastmod: "2019-05-30"
 - `machref` is required.
 - If `ptotref` and `ttotref` are specified, `pref` and `tref` are calculated based on them.
 - If `ptotref` and `ttotref` are not specified, specify two of `pref`, `tref` and `rhoref`. If all of `pref`, `tref` and `rhoref` are specified, the user must make sure `pref=rhoref*rgasref*tref`. Otherwise, it reports error.
-- For `muref`, the user should specify `suth_muref`, `suth_Tref`, `suth_Sref`. If the user does not specify these 3 parameters for the Sutherland law, the default values are used. `muref` is calculated by the Sutherland law at the temperature `tref`.
-- The parameter `viscosity_method` determines if the viscosity is constant or depending on the temperature by the Sutherland law.
+- For `muref`, the parameter `viscosity_method` determines if the viscosity is constant or depending on the temperature by the Sutherland law.
+- If `viscosity_method=2`, the user should specify `suth_muref`, `suth_Tref`, `suth_Sref`. If the user does not specify these 3 parameters for the Sutherland law, the default values are used. `muref` is calculated by the Sutherland law at the temperature `tref`. If `viscosity_method=1`, the user must specify `muref`.
 
 | Input Variable        | Type          | Default Value | Note  | Description                                                                                                                   |
 | :------------:        | :-----------: | :-----:       | :---: | :--------------------------------------------------------------------------------                                             |

@@ -54,7 +54,7 @@
       <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://desperadoshi.github.io/nfsdoc/inputs/physics_and_equations/</guid>
-      <description>Physics and Equations  machref is required. If ptotref and ttotref are specified, pref and tref are calculated based on them. If ptotref and ttotref are not specified, specify two of pref, tref and rhoref. If all of pref, tref and rhoref are specified, the user must make sure pref=rhoref*rgasref*tref. Otherwise, it reports error. For muref, the user should specify suth_muref, suth_Tref, suth_Sref. If the user does not specify these 3 parameters for the Sutherland law, the default values are used.</description>
+      <description>Physics and Equations  machref is required. If ptotref and ttotref are specified, pref and tref are calculated based on them. If ptotref and ttotref are not specified, specify two of pref, tref and rhoref. If all of pref, tref and rhoref are specified, the user must make sure pref=rhoref*rgasref*tref. Otherwise, it reports error. For muref, the parameter viscosity_method determines if the viscosity is constant or depending on the temperature by the Sutherland law.</description>
     </item>
     
     <item>

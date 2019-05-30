@@ -183,8 +183,8 @@ code.has-jax {
 <li><code>machref</code> is required.</li>
 <li>If <code>ptotref</code> and <code>ttotref</code> are specified, <code>pref</code> and <code>tref</code> are calculated based on them.</li>
 <li>If <code>ptotref</code> and <code>ttotref</code> are not specified, specify two of <code>pref</code>, <code>tref</code> and <code>rhoref</code>. If all of <code>pref</code>, <code>tref</code> and <code>rhoref</code> are specified, the user must make sure <code>pref=rhoref*rgasref*tref</code>. Otherwise, it reports error.</li>
-<li>For <code>muref</code>, the user should specify <code>suth_muref</code>, <code>suth_Tref</code>, <code>suth_Sref</code>. If the user does not specify these 3 parameters for the Sutherland law, the default values are used. <code>muref</code> is calculated by the Sutherland law at the temperature <code>tref</code>.</li>
-<li>The parameter <code>viscosity_method</code> determines if the viscosity is constant or depending on the temperature by the Sutherland law.</li>
+<li>For <code>muref</code>, the parameter <code>viscosity_method</code> determines if the viscosity is constant or depending on the temperature by the Sutherland law.</li>
+<li>If <code>viscosity_method=2</code>, the user should specify <code>suth_muref</code>, <code>suth_Tref</code>, <code>suth_Sref</code>. If the user does not specify these 3 parameters for the Sutherland law, the default values are used. <code>muref</code> is calculated by the Sutherland law at the temperature <code>tref</code>. If <code>viscosity_method=1</code>, the user must specify <code>muref</code>.</li>
 </ul>
 
 <table>
