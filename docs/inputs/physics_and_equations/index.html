@@ -179,6 +179,14 @@ code.has-jax {
 
 <h1 id="physics-and-equations">Physics and Equations</h1>
 
+<ul>
+<li><code>machref</code> is required.</li>
+<li>If <code>ptotref</code> and <code>ttotref</code> are specified, <code>pref</code> and <code>tref</code> are calculated based on them.</li>
+<li>If <code>ptotref</code> and <code>ttotref</code> are not specified, specify two of <code>pref</code>, <code>tref</code> and <code>rhoref</code>. If all of <code>pref</code>, <code>tref</code> and <code>rhoref</code> are specified, the user must make sure <code>pref=rhoref*rgasref*tref</code>. Otherwise, it reports error.</li>
+<li>For <code>muref</code>, the user should specify <code>suth_muref</code>, <code>suth_Tref</code>, <code>suth_Sref</code>. If the user does not specify these 3 parameters for the Sutherland law, the default values are used. <code>muref</code> is calculated by the Sutherland law at the temperature <code>tref</code>.</li>
+<li>The parameter <code>viscosity_method</code> determines if the viscosity is constant or depending on the temperature by the Sutherland law.</li>
+</ul>
+
 <table>
 <thead>
 <tr>
@@ -309,6 +317,14 @@ code.has-jax {
 <td align="center"><code>110.4</code></td>
 <td align="center">\</td>
 <td align="left">Constant $S$ in Sutherland’s law.</td>
+</tr>
+
+<tr>
+<td align="center"><code>viscosity_method</code></td>
+<td align="center"><code>integer</code></td>
+<td align="center"><code>1</code></td>
+<td align="center">\</td>
+<td align="left">$\bullet$ <code>1</code> := Constant viscosity. <br> $\bullet$ <code>2</code> := Sutherland law.</td>
 </tr>
 </tbody>
 </table>
