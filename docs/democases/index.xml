@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Demo Cases on NFS</title>
+    <link>https://desperadoshi.github.io/nfsdoc/democases/</link>
+    <description>Recent content in Demo Cases on NFS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>NFS are copyright © NPU CFD Group 2019.</copyright>
+    <lastBuildDate>Thu, 30 May 2019 15:02:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://desperadoshi.github.io/nfsdoc/democases/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HiOCFD5 Vortex Transport</title>
+      <link>https://desperadoshi.github.io/nfsdoc/democases/hiocfd5_vortex/</link>
+      <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://desperadoshi.github.io/nfsdoc/democases/hiocfd5_vortex/</guid>
+      <description>Case Description This case is from the 5th International Workshop on High Order CFD Methods. Check its description from this webpage.
+This basic case is aimed at testing a high-order method’s capability to preserve vorticity in an unsteady inviscid flow.
+Results NFS employs SSP-RK3 as the time marching scheme. Although the original case document targets 50 periods of time to test the accuracy, here we target $1.5 \times 10^{-4}s$ for the comparison.</description>
+    </item>
+    
+  </channel>
+</rss>

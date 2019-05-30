@@ -1,6 +1,6 @@
 <head>
   <meta charset="utf-8">
-  <title>Initialization</title>
+  <title>HiOCFD5 Vortex Transport</title>
 
   <meta name="generator" content="Hugo 0.55.6" />
 
@@ -137,21 +137,21 @@ code.has-jax {
             
             <nav class="sidebar-menu">
               <ul class="list-styled">
-            <li class=""><a href="/nfsdoc/democases/">Demo Cases</a>
-              <ul class="">
-            <li class=""><a href="/nfsdoc/democases/hiocfd5_vortex/">HiOCFD5 Vortex Transport</a>
+            <li class="parent d-block "><a href="/nfsdoc/democases/">Demo Cases</a>
+              <ul class="sub-menu">
+            <li class=" active "><a href="/nfsdoc/democases/hiocfd5_vortex/">HiOCFD5 Vortex Transport</a>
             </li></ul>
               
             </li>
-            <li class="parent d-block "><a href="/nfsdoc/inputs/">Inputs</a>
-              <ul class="sub-menu">
+            <li class=""><a href="/nfsdoc/inputs/">Inputs</a>
+              <ul class="">
             <li class=""><a href="/nfsdoc/inputs/base_fr_configuration/">Base FR Configuration</a>
             </li>
             <li class=""><a href="/nfsdoc/inputs/boundary_conditions/">Boundary Conditions</a>
             </li>
             <li class=""><a href="/nfsdoc/inputs/grid_file/">Grid File</a>
             </li>
-            <li class=" active "><a href="/nfsdoc/inputs/initialization/">Initialization</a>
+            <li class=""><a href="/nfsdoc/inputs/initialization/">Initialization</a>
             </li>
             <li class=""><a href="/nfsdoc/inputs/physics_and_equations/">Physics and Equations</a>
             </li>
@@ -174,75 +174,25 @@ code.has-jax {
       </div>
       <div class="col-lg-9">
         <div class="p-5 bg-white">
-            <h2>Initialization</h2>
+            <h2>HiOCFD5 Vortex Transport</h2>
             
 
-<h1 id="initialization">Initialization</h1>
+<h1 id="case-description">Case Description</h1>
 
-<table>
-<thead>
-<tr>
-<th align="center">Input Variable</th>
-<th align="center">Type</th>
-<th align="center">Default Value</th>
-<th align="center">Note</th>
-<th align="left">Description</th>
-</tr>
-</thead>
+<p>This case is from <a href="https://how5.cenaero.be">the 5th International Workshop on High Order CFD Methods</a>. Check its description from this <a href="https://how5.cenaero.be/content/vi1-vortex-transport-uniform-flow">webpage</a>.</p>
 
-<tbody>
-<tr>
-<td align="center"><code>itestcase</code></td>
-<td align="center"><code>integer</code></td>
-<td align="center"><code>1</code></td>
-<td align="center">\</td>
-<td align="left">Specifies the test-case/problem to solve, primarily affecting the initialization of the simulation. <br> $\bullet$ <code>1 :=</code> Generic flow, initialize to reference conditions. <br> $\bullet$ <code>2 :=</code> Diagonally propagating Shu version of the isentropic Euler vortex. <br> $\bullet$ <code>3 :=</code> Channel flow (not working)</td>
-</tr>
+<p>This basic case is aimed at testing a high-order method’s capability to preserve vorticity in an unsteady inviscid flow.</p>
 
-<tr>
-<td align="center"><code>load_restart_file</code></td>
-<td align="center"><code>logical</code></td>
-<td align="center"><code>.FALSE.</code></td>
-<td align="center">\</td>
-<td align="left">Logical flag used to indicate whether or not to read in a restart file.</td>
-</tr>
+<h1 id="results">Results</h1>
 
-<tr>
-<td align="center"><code>restart_file</code></td>
-<td align="center"><code>character(len=150)</code></td>
-<td align="center"><code>out.rst</code></td>
-<td align="center">\</td>
-<td align="left">File path to the solution restart file that will be read if <code>load_restart_file</code> is true.</td>
-</tr>
+<p>NFS employs SSP-RK3 as the time marching scheme. Although the original case document targets 50 periods of time to test the accuracy, here we target $1.5 \times 10^{-4}s$ for the comparison. In fact, a long time run shows that the accuracy is kept really well after 50 periods of time. The $L_2$ error is in terms of the streamwise velocity.</p>
 
-<tr>
-<td align="center"><code>restart_interval</code></td>
-<td align="center"><code>integer</code></td>
-<td align="center"><code>0</code></td>
-<td align="center">\</td>
-<td align="left">Number of time steps between writing restart files. <br> <span style="color:blue">NOTE</span>: A restart file is always written after completing the last time step.</td>
-</tr>
+<p>Using 3 grids under P3 and P4, NFS shows the following orders of accuracy.</p>
 
-<tr>
-<td align="center"><code>time_ave_file</code></td>
-<td align="center"><code>character(len=150)</code></td>
-<td align="center"><code>out.ave</code></td>
-<td align="center">\</td>
-<td align="left">File path to the time-averaged solution restart file that will be read in if <code>load_restart_file</code> and <code>output_time_averaging</code> are both true. The code will add the accumulation of time-averaged flow variables from the new running simulation to the time-averaged flow variables of the previous simulation from which the new simulation restarted.</td>
-</tr>
+<p><img src="demo_cases/HiOCFD5_Vortex/error_h.png" alt="Error VS. Grid size" /></p>
 
-<tr>
-<td align="center"><code>flpini_prof_input</code></td>
-<td align="center"><code>prof_input_t</code></td>
-<td align="center">\</td>
-<td align="center">\</td>
-<td align="left">Input file for the initialization of the flat plate case. The data type is the same as <code>cpbc_prof_input</code>. Refer to it for explanations.</td>
-</tr>
-</tbody>
-</table>
-
-            <p class="post-meta border-bottom pb-3 mb-0">Updated on May 30, 2019</p><nav class="pagination mt-3"><a class="nav nav-prev" href="/nfsdoc/inputs/grid_file/" title="Grid File"><i class="ti-arrow-left mr-2"></i>Grid File</a>
-            <a class="nav nav-next" href="/nfsdoc/inputs/physics_and_equations/" title="Physics and Equations">Physics and Equations<i class="ti-arrow-right ml-2"></i></a>
+            <p class="post-meta border-bottom pb-3 mb-0">Updated on May 30, 2019</p><nav class="pagination mt-3"><a class="nav nav-prev" href="/nfsdoc/democases/" title="Demo Cases"><i class="ti-arrow-left mr-2"></i>Demo Cases</a>
+            <a class="nav nav-next" href="/nfsdoc/inputs/" title="Inputs">Inputs<i class="ti-arrow-right ml-2"></i></a>
             </nav></div>
       </div>
     </div>

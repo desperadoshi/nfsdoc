@@ -1,6 +1,7 @@
-<head>
+<!DOCTYPE html>
+<html lang="en-us"><head>
   <meta charset="utf-8">
-  <title>Grid File</title>
+  <title>Demo Cases</title>
 
   <meta name="generator" content="Hugo 0.55.6" />
 
@@ -81,12 +82,12 @@ code.has-jax {
 
 
 </head>
-
-
-<!-- navigation -->
-<header class="shadow-bottom sticky-top bg-white">
-  <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light">
+<body>
+        
+        <!-- navigation -->
+        <header class="shadow-bottom sticky-top bg-white">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="https://desperadoshi.github.io/nfsdoc/">NFS</a>
   <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
     aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
@@ -124,109 +125,93 @@ code.has-jax {
     </ul>
   </div>
 </nav>
-  </div>
-</header>
-<!-- /navigation -->
+            </div>
+        </header>
+        <!-- /navigation -->
+        
+        <div id="content">
 
-
-<section class="single pt-5 bg-gray">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3">
-        <div class="p-4 bg-white sticky-top top-100">
-            
-            <nav class="sidebar-menu">
-              <ul class="list-styled">
-            <li class=""><a href="/nfsdoc/democases/">Demo Cases</a>
-              <ul class="">
-            <li class=""><a href="/nfsdoc/democases/hiocfd5_vortex/">HiOCFD5 Vortex Transport</a>
-            </li></ul>
-              
-            </li>
-            <li class="parent d-block "><a href="/nfsdoc/inputs/">Inputs</a>
-              <ul class="sub-menu">
-            <li class=""><a href="/nfsdoc/inputs/base_fr_configuration/">Base FR Configuration</a>
-            </li>
-            <li class=""><a href="/nfsdoc/inputs/boundary_conditions/">Boundary Conditions</a>
-            </li>
-            <li class=" active "><a href="/nfsdoc/inputs/grid_file/">Grid File</a>
-            </li>
-            <li class=""><a href="/nfsdoc/inputs/initialization/">Initialization</a>
-            </li>
-            <li class=""><a href="/nfsdoc/inputs/physics_and_equations/">Physics and Equations</a>
-            </li>
-            <li class=""><a href="/nfsdoc/inputs/solution/">Solution</a>
-            </li>
-            <li class=""><a href="/nfsdoc/inputs/time_scheme/">Time Scheme</a>
-            </li></ul>
-              
-            </li>
-            <li class=""><a href="/nfsdoc/install/">Install</a>
-              <ul class="">
-            <li class=""><a href="/nfsdoc/install/install/">Compile NFS</a>
-            </li></ul>
-              
-            </li></ul>
-            </nav>
-
-            
+  <!-- page title -->
+  <section class="section bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+           <h1 class="text-white mb-4">NPU Flux-reconstruction Simulation - NFS</h1> 
+           <input id="search" class="form-control" placeholder="Have a question? Just ask here or enter terms"> 
+            <!-- Javascript -->
+            <script>
+              $(function() {
+                var projects = [
+                  
+                    {
+                      value: "HiOCFD5 Vortex Transport",
+                      label: "HiOCFD5 Vortex Transport",
+                      url:"https:\/\/desperadoshi.github.io\/nfsdoc\/democases\/hiocfd5_vortex\/"
+                    },
+                  
+                ];
+                $( "#search" ).autocomplete({
+                    minLength: 0,
+                    source: projects,
+                    focus: function( event, ui ) {
+                      $( "#search" ).val( ui.item.label );
+                        return false;
+                    },
+                    select: function( event, ui ) {
+                      $( "#search" ).val( ui.item.label );
+                      $( "#project-id" ).val( ui.item.value );
+                      return false;
+                    }
+                })
+                .data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+                  return $( "<li>" )
+                  .append( "<a href=" + item.url + " + \" &quot;\" +  >" + item.label + "</a>" )
+                  .appendTo( ul );
+                };
+              });
+            </script>
         </div>
       </div>
-      <div class="col-lg-9">
-        <div class="p-5 bg-white">
-            <h2>Grid File</h2>
-            
+    </div>
+  </section>
+  <!-- /page title -->
 
-<h1 id="grid-file">Grid File</h1>
-
-<table>
-<thead>
-<tr>
-<th align="center">Input Variable</th>
-<th align="center">Type</th>
-<th align="center">Default Value</th>
-<th align="center">Note</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td align="center"><code>grid_format</code></td>
-<td align="center"><code>integer</code></td>
-<td align="center"><code>1</code></td>
-<td align="center">\</td>
-<td align="left">Specifies the format of the input grid file. <br> $\bullet$ <code>1 := GMSH</code>  <br> $\bullet$ <code>2 := CGNS</code></td>
-</tr>
-
-<tr>
-<td align="center"><code>gridfile</code></td>
-<td align="center"><code>character(len=150)</code></td>
-<td align="center">&rdquo;&rdquo;</td>
-<td align="center">\</td>
-<td align="left">File path to the input grid file relative to the current directory.</td>
-</tr>
-
-<tr>
-<td align="center"><code>metis_option</code></td>
-<td align="center"><code>integer</code></td>
-<td align="center"><code>3</code></td>
-<td align="center">\</td>
-<td align="left">Specifies the METIS partitioning algorithm to use for partitioning the global grid. <br> $\bullet$ <code>1 :=</code> Create non-weighted partitions based on a multilevel recursive bisection while minimizing the edge cut. For grids with origanized all quad or hex cells, I recommend this option. <br> $\bullet$ <code>2 :=</code> Create non-weighted partitions based on a multilevel kway algorithm while minimizing the edge cut. <br> $\bullet$ <code>3 :=</code> Create non-weighted partitions based on a multilevel kway algorithm while minimizing the total communication volume. <br> $\bullet$ <code>4 :=</code> Create weighted partitions based on a multilevel k-way algorithm while minimizing the total communication volume (weighting is not yet implemented so this is currently the same as option 3).</td>
-</tr>
-</tbody>
-</table>
-
-            <p class="post-meta border-bottom pb-3 mb-0">Updated on May 30, 2019</p><nav class="pagination mt-3"><a class="nav nav-prev" href="/nfsdoc/inputs/boundary_conditions/" title="Boundary Conditions"><i class="ti-arrow-left mr-2"></i>Boundary Conditions</a>
-            <a class="nav nav-next" href="/nfsdoc/inputs/initialization/" title="Initialization">Initialization<i class="ti-arrow-right ml-2"></i></a>
-            </nav></div>
+  <!-- details page -->
+  <section class="single section bg-gray pb-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="mb-5 bg-white p-4 sticky-top">
+            <a href="https://desperadoshi.github.io/nfsdoc/democases/">
+              <h4 class="mb-4">Demo Cases</h4>
+            </a>
+            <ul class="list-styled">
+              
+              <li><a href="https://desperadoshi.github.io/nfsdoc/democases/hiocfd5_vortex/">HiOCFD5 Vortex Transport</a></li>
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="p-5 bg-white">
+              <h2>Demo Cases</h2>
+              <div class="bg-gray p-4">
+                  <h3 class="mt-0">Article</h3>
+                  <ul class="list-unstyled">
+                    
+                    <li><a href="https://desperadoshi.github.io/nfsdoc/democases/hiocfd5_vortex/">HiOCFD5 Vortex Transport</a></li>
+                    
+                  </ul>
+              </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  <!-- /details page -->
 
 
-<!-- footer -->
+        </div><!-- footer -->
 <footer class="section bg-gray pb-0">
   <div class="container">
     <div class="row">
@@ -253,4 +238,5 @@ code.has-jax {
 
 <!-- Main Script -->
 
-<script src="https://desperadoshi.github.io/nfsdoc/js/script.min.js"></script>
+<script src="https://desperadoshi.github.io/nfsdoc/js/script.min.js"></script></body>
+</html>
