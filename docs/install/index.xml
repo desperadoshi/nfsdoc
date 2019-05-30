@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Install on NFS</title>
+    <link>https://desperadoshi.github.io/nfsdoc/install/</link>
+    <description>Recent content in Install on NFS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>NFS are copyright © NPU CFD Group 2019.</copyright>
+    <lastBuildDate>Thu, 30 May 2019 12:12:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://desperadoshi.github.io/nfsdoc/install/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Compile NFS</title>
+      <link>https://desperadoshi.github.io/nfsdoc/install/install/</link>
+      <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://desperadoshi.github.io/nfsdoc/install/install/</guid>
+      <description>Compile Contrib The original instructions from NFS say that we need to download and compile the following packages.
+ metis-5.1.0.tar.gz hdf5-1.8.19.tar.gz CGNS-3.3.0.tar.gz mpich-3.2.tar.gz  Here we compile only 3 of them, excluding mpich. Supercomputers like Tianhe-2 have their customized MPI environments. Using our own MPI will degrade the running speed.
+File Structure . ├── contrib │ ├── cgns │ ├── hdf5 │ └── metis ├── contrib_src │ ├── cgns_src │ ├── hdf5_src │ └── metis_src └── NFS ├── cmake ├── contrib ├── debug ├── dev_utility └── src  Before compiling the contrib packages, set the root dir.</description>
+    </item>
+    
+  </channel>
+</rss>

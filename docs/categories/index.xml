@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on NFS</title>
+    <link>https://desperadoshi.github.io/nfsdoc/categories/</link>
+    <description>Recent content in Categories on NFS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>NFS are copyright © NPU CFD Group 2019.</copyright>
+    
+	<atom:link href="https://desperadoshi.github.io/nfsdoc/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+  </channel>
+</rss>

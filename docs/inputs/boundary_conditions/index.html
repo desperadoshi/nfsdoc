@@ -1,0 +1,650 @@
+<head>
+  <meta charset="utf-8">
+  <title>Boundary Conditions</title>
+
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://desperadoshi.github.io/nfsdoc/plugins/bootstrap/bootstrap.min.css">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="https://desperadoshi.github.io/nfsdoc/plugins/themify-icons/themify-icons.css">
+  <!-- highlight -->
+  <link rel="stylesheet" href="https://desperadoshi.github.io/nfsdoc/plugins/highlight/hybrid.css">
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
+  <style>
+  :root{
+    --primary-color:#02007e;
+    --secondary-color:#f9f9f9;
+    --text-color:#636363;
+    --text-color-dark:#242738;
+    --white-color:#ffffff;
+  }  
+  </style>
+
+  <base href="https://desperadoshi.github.io/nfsdoc/">
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://desperadoshi.github.io/nfsdoc/css/style.min.css" integrity="" media="screen">
+
+  <!-- jquiry -->
+  <script src="https://desperadoshi.github.io/nfsdoc/plugins/jquery/jquery-1.12.4.js"></script>
+
+  <!-- jquary ui -->
+  <script src="https://desperadoshi.github.io/nfsdoc/plugins/jquery/jquery-ui.js"></script>
+
+  <!--Favicon-->
+  <link rel="icon" href="https://desperadoshi.github.io/nfsdoc/favicon-32x32.png" type="image/x-icon">
+
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+</head>
+
+
+<!-- navigation -->
+<header class="shadow-bottom sticky-top bg-white">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="https://desperadoshi.github.io/nfsdoc/">NFS</a>
+  <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
+    aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse text-center" id="navigation">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="https://desperadoshi.github.io/nfsdoc/">Home</a>
+      </li>
+      
+      
+      <li class="nav-item">
+          <a class="nav-link text-dark" href="/nfsdoc/demo_cases">Demo</a>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+          <a class="nav-link text-dark" href="/nfsdoc/inputs">Inputs</a>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+          <a class="nav-link text-dark" href="/nfsdoc/install">Install</a>
+      </li>
+      
+      
+    </ul>
+    
+    <ul class="list-inline text-center mb-0">
+      
+    </ul>
+  </div>
+</nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+
+<section class="single pt-5 bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="p-4 bg-white sticky-top top-100">
+            
+            <nav class="sidebar-menu">
+              <ul class="list-styled">
+            <li class=""><a href="/nfsdoc/demo_cases/">Demo Cases</a>
+              <ul class="">
+            <li class=""><a href="/nfsdoc/demo_cases/hiocfd5_vortex/">HiOCFD5 Vortex Transport</a>
+            </li></ul>
+              
+            </li>
+            <li class="parent d-block "><a href="/nfsdoc/inputs/">Inputs</a>
+              <ul class="sub-menu">
+            <li class=""><a href="/nfsdoc/inputs/base_fr_configuration/">Base FR Configuration</a>
+            </li>
+            <li class=" active "><a href="/nfsdoc/inputs/boundary_conditions/">Boundary Conditions</a>
+            </li>
+            <li class=""><a href="/nfsdoc/inputs/grid_file/">Grid File</a>
+            </li>
+            <li class=""><a href="/nfsdoc/inputs/initialization/">Initialization</a>
+            </li>
+            <li class=""><a href="/nfsdoc/inputs/physics_and_equations/">Physics and Equations</a>
+            </li>
+            <li class=""><a href="/nfsdoc/inputs/solution/">Solution</a>
+            </li>
+            <li class=""><a href="/nfsdoc/inputs/time_scheme/">Time Scheme</a>
+            </li></ul>
+              
+            </li>
+            <li class=""><a href="/nfsdoc/install/">Install</a>
+              <ul class="">
+            <li class=""><a href="/nfsdoc/install/install/">Compile NFS</a>
+            </li></ul>
+              
+            </li></ul>
+            </nav>
+
+            
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="p-5 bg-white">
+            <h2>Boundary Conditions</h2>
+            
+
+<h1 id="boundary-conditions">Boundary Conditions</h1>
+
+<h2 id="base">Base</h2>
+
+<table>
+<thead>
+<tr>
+<th align="center">Input Variable</th>
+<th align="center">Type</th>
+<th align="center">Default Value</th>
+<th align="center">Note</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>bc_input</code></td>
+<td align="center"><code>bc_input_t</code></td>
+<td align="center">\</td>
+<td align="center">\</td>
+<td align="left">Derived type to specify boundary conditions. An iterative loop will go through the specified flow conditions and try to compute the remaining unspecified flow conditions. <br> <span style="color:blue">NOTE</span>: A run-time error will occur if either of the following conditions are true: <br> A) The flow conditions are over-specified and inconsistent <br> B) The flow conditions are under-specified and it is unable to compute the remaining unspecified flow conditions. <br> <span style="color:blue">EXAMPLE</span>: An example of a well defined boundary condition using <code>bc_input</code>: <br> $\bullet$ <code>bc_input(1)%name = inflow_subsonic</code> <br> $\bullet$ <code>bc_input(1)%bc_type_string = SubInflow ! Subsonic Inflow BC</code> <br> $\bullet$ <code>bc_input(1)%p_static = 101325.0</code> <br> $\bullet$ <code>bc_input(1)%p_total = 121286.025</code> <br> $\bullet$ <code>bc_input(1)%t_total = 293.15</code> <br> <span style="color:blue">NOTE</span>: You must specify all BCs which should be consistent with those in the grid file.</td>
+</tr>
+
+<tr>
+<td align="center"><code>bc_input(1)%name</code></td>
+<td align="center"><code>character(len=32)</code></td>
+<td align="center"><code>&quot;&quot;</code></td>
+<td align="center">\</td>
+<td align="left">Character string that matches the name of a boundary group in the grid file. <br> <span style="color:blue">NOTE</span>: Case (upper/lower-case) does NOT matter. For the periodic BC, in the GMSH grid file, the user has to specify which face group pairs which one. For example, the face group no.4 is named <code>Periodic-1</code> and it pairs face group no.5. So the face group no.5 must be named <code>Periodic-2</code>. In the meantime, another periodic face group pair is named <code>Periodic-3</code> and <code>Periodic-4</code>. The ending number is used to pair face groups.</td>
+</tr>
+
+<tr>
+<td align="center"><code>bc_input(1)%bc_type_string</code></td>
+<td align="center"><code>character(len=32)</code></td>
+<td align="center"><code>&quot;&quot;</code></td>
+<td align="center">\</td>
+<td align="left">The boundary conditions are specified in the grid file and the array <code>bface(1,:)</code> is updated accordingly. BC by this <code>bc_type_string</code> must be consistent with the grid BC. Because <code>bc_input</code> is used to set up <code>bc_in</code>. One of the usages of <code>bc_in</code> is to provide the flow condition for a BC. <br> Valid values for boundary condition types are (Not complete): <br> $\bullet$ Fix all : <code>Fixed</code> <br> $\bullet$ Generic inflow: <code>Inflow</code>, <code>Inlet</code> <br> $\bullet$ Subsonic inflow : <code>SubInflow</code> <br> $\bullet$ No-slip adiabatic wall : <code>AdiabaticWall</code> <br> $\bullet$ Slip wall : <code>SlipWall</code></td>
+</tr>
+
+<tr>
+<td align="center"><code>bc_input(1)%p_static</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>-1.0</code></td>
+<td align="center">\</td>
+<td align="left">Static pressure (units of Pa).</td>
+</tr>
+
+<tr>
+<td align="center"><code>bc_input(1)%t_static</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>-1.0</code></td>
+<td align="center">\</td>
+<td align="left">Static temperature (units of Kelvin).</td>
+</tr>
+
+<tr>
+<td align="center"><code>bc_input(1)%rho_static</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>-1.0</code></td>
+<td align="center">\</td>
+<td align="left">Static density (units of $kg/m^3$)</td>
+</tr>
+
+<tr>
+<td align="center"><code>bc_input(1)%mach</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.4</code></td>
+<td align="center">\</td>
+<td align="left">Mach number. (dimensionless)</td>
+</tr>
+
+<tr>
+<td align="center"><code>bc_input(1)%vx</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.0</code></td>
+<td align="center">\</td>
+<td align="left">Velocity in the x coordinate direction (units of m/s)</td>
+</tr>
+
+<tr>
+<td align="center"><code>bc_input(1)%vy</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.0</code></td>
+<td align="center">\</td>
+<td align="left">Velocity in the y coordinate direction (units of m/s)</td>
+</tr>
+
+<tr>
+<td align="center"><code>bc_input(1)%vz</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.0</code></td>
+<td align="center">\</td>
+<td align="left">Velocity in the z coordinate direction (units of m/s)</td>
+</tr>
+
+<tr>
+<td align="center"><code>bc_input(1)%p_total</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>-1.0</code></td>
+<td align="center">\</td>
+<td align="left">Total pressure (units of Pa).</td>
+</tr>
+
+<tr>
+<td align="center"><code>bc_input(1)%t_total</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>-1.0</code></td>
+<td align="center">\</td>
+<td align="left">Total temperature (units of Kelvin).</td>
+</tr>
+
+<tr>
+<td align="center"><code>bc_input(1)%rho_total</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>-1.0</code></td>
+<td align="center">\</td>
+<td align="left">Total density (units of $kg/m^3$)</td>
+</tr>
+
+<tr>
+<td align="center"><code>bc_input(1)%alpha_aoa</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.0</code></td>
+<td align="center">\</td>
+<td align="left">Angle of attack in the $x-y$ plane. (dimensionless)</td>
+</tr>
+
+<tr>
+<td align="center"><code>bc_input(1)%beta_aoa</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.0</code></td>
+<td align="center">\</td>
+<td align="left">Angle of attack in the $x-z$ plane. (dimensionless)</td>
+</tr>
+
+<tr>
+<td align="center"><code>bc_input(1)%wall_temp</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>-1.0</code></td>
+<td align="center">\</td>
+<td align="left">Temperature for isothermal wall (units of Kelvin).</td>
+</tr>
+
+<tr>
+<td align="center"><code>walls_are_exact</code></td>
+<td align="center"><code>logical</code></td>
+<td align="center"><code>.TRUE.</code></td>
+<td align="center">\</td>
+<td align="left">Logical flag that determines if the solution on wall boundary conditions are treated as either the exact flow conditions or the ghost state that equals the exact flow conditions when averaged with the interior state. <br> $\bullet$ <code>.TRUE. :=</code> The wall boundary solution is the exact wall boundary condition, e.g., $[u<em>{wall}; v</em>{wall}; w<em>{wall}] = 0$ for a no-slip wall. <br> $\bullet$ <code>.FALSE. :=</code> The average of the wall boundary solution and the interior solution on the boundary face recovers the exact wall boundary condition, e.g., $[u</em>{wall}; v<em>{wall}; w</em>{wall}] = − [u<em>{wall}; v</em>{wall}; w_{wall}]$ for a no-slip wall. <br> <span style="color:blue">NOTE</span>: Hartmann (2014) reports that using exact wall boundary conditions seems to be more accurate on coarse grids and for lower values of solution order, whereas using the averaging method seems to be a little more stable. Details can be found at <code>http://elib.dlr.de/90967/1/hartmann_leicht_VKI_LS_2014-3.pdf</code></td>
+</tr>
+
+<tr>
+<td align="center"><code>sub_inflow_method</code></td>
+<td align="center"><code>integer</code></td>
+<td align="center"><code>1</code></td>
+<td align="center">\</td>
+<td align="left">Specifies which subsonic inflow boundary condition algorithm to use. <br> $\bullet$ <code>1 :=</code> Hold the total pressure and total temperature constant at the inflow, use the outgoing characteristic from the interior to perform a Newton iteration to get the static temperature, speed of sound, and normal velocity magnitude for the exterior state. <br> $\bullet$ <code>2 :=</code> Use the inflow static density and velocity, and the interior static pressure. <br> $\bullet$ <code>3 :=</code> Hold the inflow total pressure and total temperature constant, and use the interior velocity. <br> $\bullet$ <code>4 :=</code> Hold the inflow total pressure and total temperature constant, and use the interior static pressure. <br> <span style="color:blue">NOTE</span>: It is highly recommended to use option 1.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="custom-profile">Custom Profile</h2>
+
+<table>
+<thead>
+<tr>
+<th align="center">Input Variable</th>
+<th align="center">Type</th>
+<th align="center">Default Value</th>
+<th align="center">Note</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>cpbc_prof_input</code></td>
+<td align="center"><code>prof_input_t</code></td>
+<td align="center">\</td>
+<td align="center">\</td>
+<td align="left">Input file for the custom profile BC. The first line of the input file is a comment line starting with <code>!</code>.</td>
+</tr>
+
+<tr>
+<td align="center"><code>cpbc_prof_input%fname</code></td>
+<td align="center"><code>character(len=256)</code></td>
+<td align="center"><code>&quot;&quot;</code></td>
+<td align="center">\</td>
+<td align="left">File name of the input file for the custom profile BC.</td>
+</tr>
+
+<tr>
+<td align="center"><code>cpbc_prof_input%fdelim</code></td>
+<td align="center"><code>character</code></td>
+<td align="center"><code>,</code></td>
+<td align="center">\</td>
+<td align="left">Column delimiter in the input file for the custom profile BC.</td>
+</tr>
+
+<tr>
+<td align="center"><code>cpbc_prof_input%dat_dir</code></td>
+<td align="center"><code>character</code></td>
+<td align="center"><code>&quot;&quot;</code></td>
+<td align="center">\</td>
+<td align="left">The input profile is a 1D curve for each primitive variable. <code>dat_dir</code> indicates the direction along with the input profile is distributed. Valid values are <code>X</code> or <code>Y</code>. <code>Z</code> is always the spanwise direction in 3D. In 2D, there is no <code>Z</code>.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="inflow-turbulence-generation">Inflow Turbulence Generation</h2>
+
+<table>
+<thead>
+<tr>
+<th align="center">Input Variable</th>
+<th align="center">Type</th>
+<th align="center">Default Value</th>
+<th align="center">Note</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center"><code>tgbc_input</code></td>
+<td align="center"><code>tgbc_input_t</code></td>
+<td align="center">\</td>
+<td align="center">\</td>
+<td align="left">Background mesh parameters for turbulence generation BC.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%ncz</code></td>
+<td align="center"><code>integer</code></td>
+<td align="center"><code>0</code></td>
+<td align="center">\</td>
+<td align="left">The number of grid cells along the $z$ direction in the background mesh for the turbulence generation BC. $z$ direction is assumed to be the spanwise direction in 3D simulation.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%ncy_1</code></td>
+<td align="center"><code>integer</code></td>
+<td align="center"><code>0</code></td>
+<td align="center">\</td>
+<td align="left">The number of grid cells along the $y$ direction in the background mesh section 1 for the turbulence generation BC. There are 3 sections along the $y$ direction. Only the first 2 sections span the background mesh. The 3rd section is the farfield section without turbulence.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%ncy_2</code></td>
+<td align="center"><code>integer</code></td>
+<td align="center"><code>0</code></td>
+<td align="center">\</td>
+<td align="left">The number of grid cells along the $y$ direction in the background mesh section 2 for the turbulence generation BC.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%yl</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>1E12</code></td>
+<td align="center">\</td>
+<td align="left">The lower bound of the domain of the background mesh along $y$ direction.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%yh_1</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.0</code></td>
+<td align="center">\</td>
+<td align="left">The upper bound of the domain of the background mesh along $y$ direction for the section 1.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%yh_2</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.0</code></td>
+<td align="center">\</td>
+<td align="left">The upper bound of the domain of the background mesh along $y$ direction for the section 2.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%yh_3</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>5E11</code></td>
+<td align="center">\</td>
+<td align="left">The upper bound of the domain of the background mesh along $y$ direction for the section 3. This should be the upper limiter of the inlet plane of the real grid.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%zl</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>1E12</code></td>
+<td align="center">\</td>
+<td align="left">The lower bound of the domain of the background mesh along $z$ direction. $z$ direction is the spanwise direction. In 3D, <code>zl</code> and <code>zh</code> are always required.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%zh</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.0</code></td>
+<td align="center">\</td>
+<td align="left">The upper bound of the domain of the background mesh along $z$ direction.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%delta_99</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.0</code></td>
+<td align="center">\</td>
+<td align="left">The boundary layer thickness at the inlet plane. This value is used the basis to calculate various integral length scale.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%ilsx_s1</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.2</code></td>
+<td align="center">\</td>
+<td align="left">The ratio of integral length scale for the $x$ direction in the section 1. This ratio times the boundary layer thickness give you the physical integral length scale for the $x$ direction.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%ilsx_s2</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.6</code></td>
+<td align="center">\</td>
+<td align="left">The ratio of integral length scale for the $x$ direction in the section 2. This ratio times the boundary layer thickness give you the physical integral length scale for the $x$ direction.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%ilsy_s1</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.2</code></td>
+<td align="center">\</td>
+<td align="left">The ratio of integral length scale for the $y$ direction in the section 1. This ratio times the boundary layer thickness give you the physical integral length scale for the $y$ direction.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%ilsy_s2</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.5</code></td>
+<td align="center">\</td>
+<td align="left">The ratio of integral length scale for the $y$ direction in the section 2. This ratio times the boundary layer thickness give you the physical integral length scale for the $y$ direction.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%ilsz_s1</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.6</code></td>
+<td align="center">\</td>
+<td align="left">The ratio of integral length scale for the $z$ direction in the section 1. This ratio times the boundary layer thickness give you the physical integral length scale for the $z$ direction.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%ilsz_s2</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.6</code></td>
+<td align="center">\</td>
+<td align="left">The ratio of integral length scale for the $z$ direction in the section 2. This ratio times the boundary layer thickness give you the physical integral length scale for the $z$ direction.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%inflow_u</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>-1.0</code></td>
+<td align="center">\</td>
+<td align="left">The freestream velocity at the the inlet plane. This velocity is the basis to calculate the integral time scale.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%ius_1</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.2</code></td>
+<td align="center">\</td>
+<td align="left">The ratio of the streamwise velocity in the section 1. This value times the inflow freestream velocity gives you the velocity value used in the calculation of the integral time scale in the section 1.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%ius_2</code></td>
+<td align="center"><code>real</code></td>
+<td align="center"><code>0.6</code></td>
+<td align="center">\</td>
+<td align="left">The ratio of the streamwise velocity in the section 2. This value times the inflow freestream velocity gives you the velocity value used in the calculation of the integral time scale in the section 2.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%RetSts_fname</code></td>
+<td align="center"><code>character(len=256)</code></td>
+<td align="center"><code>&quot;&quot;</code></td>
+<td align="center">\</td>
+<td align="left">File name of the input file for the Reynolds stress profile.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%ReySts_fdelim</code></td>
+<td align="center"><code>character</code></td>
+<td align="center"><code>,</code></td>
+<td align="center">\</td>
+<td align="left">Column delimiter in the input file for the Reynolds stress profile.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%VarMean_fname</code></td>
+<td align="center"><code>character(len=256)</code></td>
+<td align="center"><code>&quot;&quot;</code></td>
+<td align="center">\</td>
+<td align="left">File name of the input file for the mean flow profile.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%VarMean_fdelim</code></td>
+<td align="center"><code>character</code></td>
+<td align="center"><code>,</code></td>
+<td align="center">\</td>
+<td align="left">Column delimiter in the input file for the mean flow profile.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%subtype</code></td>
+<td align="center"><code>integer</code></td>
+<td align="center"><code>1</code></td>
+<td align="center">\</td>
+<td align="left">Specify the way how generated turbulence is incorporated into the flow. When the inflow turbulence is generated at the inlet plane, a bunch of values are avaible at the inlet plane. Should we assign them to the ghost cell values directly? Or use another way? <br> $\bullet$ <code>1 :=</code> Calculate the local Mach number. If supersonic, directly assign the generated turbulence to the ghost cells. If not, assign all variables to ghost cells except for the pressure which is taken from the interior cell. It is the same as <code>INFLOW</code> <br> $\bullet$ <code>2 :=</code> Directly assign the generated turbulence to the ghost cells. It is the same as <code>FIXED</code>.</td>
+</tr>
+
+<tr>
+<td align="center"><code>tgbc_input%dump_prof</code></td>
+<td align="center"><code>logical</code></td>
+<td align="center"><code>.FALSE.</code></td>
+<td align="center">\</td>
+<td align="left">Logical flag that enables/disables dumping various profiles in the turbulence generation BC. So you can debug it. Only when the executable is compiled with the pre-processing keyword <code>DEBUG_ON</code> this input parameter could work. Because otherwise, relavant codes are not compiled into the executable.</td>
+</tr>
+</tbody>
+</table>
+
+            <p class="post-meta border-bottom pb-3 mb-0">Updated on May 30, 2019</p><nav class="pagination mt-3"><a class="nav nav-prev" href="/nfsdoc/inputs/base_fr_configuration/" title="Base FR Configuration"><i class="ti-arrow-left mr-2"></i>Base FR Configuration</a>
+            <a class="nav nav-next" href="/nfsdoc/inputs/grid_file/" title="Grid File">Grid File<i class="ti-arrow-right ml-2"></i></a>
+            </nav></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- footer -->
+<footer class="section bg-gray pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 text-md-left text-center">
+        <p>NFS are copyright © NPU CFD Group 2019.</p> 
+      </div>
+      <div class="col-md-4 text-md-right text-center">
+        <ul class="list-inline mb-3">
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="https://desperadoshi.github.io/"><i class="ti-facebook"></i></a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- Bootstrap JS -->
+<script src="https://desperadoshi.github.io/nfsdoc/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- highlight -->
+<script src="https://desperadoshi.github.io/nfsdoc/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Main Script -->
+
+<script src="https://desperadoshi.github.io/nfsdoc/js/script.min.js"></script>

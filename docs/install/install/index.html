@@ -1,0 +1,345 @@
+<head>
+  <meta charset="utf-8">
+  <title>Compile NFS</title>
+
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- ** Plugins Needed for the Project ** -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://desperadoshi.github.io/nfsdoc/plugins/bootstrap/bootstrap.min.css">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href="https://desperadoshi.github.io/nfsdoc/plugins/themify-icons/themify-icons.css">
+  <!-- highlight -->
+  <link rel="stylesheet" href="https://desperadoshi.github.io/nfsdoc/plugins/highlight/hybrid.css">
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
+  <style>
+  :root{
+    --primary-color:#02007e;
+    --secondary-color:#f9f9f9;
+    --text-color:#636363;
+    --text-color-dark:#242738;
+    --white-color:#ffffff;
+  }  
+  </style>
+
+  <base href="https://desperadoshi.github.io/nfsdoc/">
+
+  <!-- Main Stylesheet -->
+  
+  <link rel="stylesheet" href="https://desperadoshi.github.io/nfsdoc/css/style.min.css" integrity="" media="screen">
+
+  <!-- jquiry -->
+  <script src="https://desperadoshi.github.io/nfsdoc/plugins/jquery/jquery-1.12.4.js"></script>
+
+  <!-- jquary ui -->
+  <script src="https://desperadoshi.github.io/nfsdoc/plugins/jquery/jquery-ui.js"></script>
+
+  <!--Favicon-->
+  <link rel="icon" href="https://desperadoshi.github.io/nfsdoc/favicon-32x32.png" type="image/x-icon">
+
+  <script type="text/javascript"
+        async
+        src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+
+
+</head>
+
+
+<!-- navigation -->
+<header class="shadow-bottom sticky-top bg-white">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="https://desperadoshi.github.io/nfsdoc/">NFS</a>
+  <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
+    aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse text-center" id="navigation">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="https://desperadoshi.github.io/nfsdoc/">Home</a>
+      </li>
+      
+      
+      <li class="nav-item">
+          <a class="nav-link text-dark" href="/nfsdoc/demo_cases">Demo</a>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+          <a class="nav-link text-dark" href="/nfsdoc/inputs">Inputs</a>
+      </li>
+      
+      
+      
+      <li class="nav-item">
+          <a class="nav-link text-dark" href="/nfsdoc/install">Install</a>
+      </li>
+      
+      
+    </ul>
+    
+    <ul class="list-inline text-center mb-0">
+      
+    </ul>
+  </div>
+</nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+
+<section class="single pt-5 bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="p-4 bg-white sticky-top top-100">
+            
+            <nav class="sidebar-menu">
+              <ul class="list-styled">
+            <li class=""><a href="/nfsdoc/demo_cases/">Demo Cases</a>
+              <ul class="">
+            <li class=""><a href="/nfsdoc/demo_cases/hiocfd5_vortex/">HiOCFD5 Vortex Transport</a>
+            </li></ul>
+              
+            </li>
+            <li class=""><a href="/nfsdoc/inputs/">Inputs</a>
+              <ul class="">
+            <li class=""><a href="/nfsdoc/inputs/base_fr_configuration/">Base FR Configuration</a>
+            </li>
+            <li class=""><a href="/nfsdoc/inputs/boundary_conditions/">Boundary Conditions</a>
+            </li>
+            <li class=""><a href="/nfsdoc/inputs/grid_file/">Grid File</a>
+            </li>
+            <li class=""><a href="/nfsdoc/inputs/initialization/">Initialization</a>
+            </li>
+            <li class=""><a href="/nfsdoc/inputs/physics_and_equations/">Physics and Equations</a>
+            </li>
+            <li class=""><a href="/nfsdoc/inputs/solution/">Solution</a>
+            </li>
+            <li class=""><a href="/nfsdoc/inputs/time_scheme/">Time Scheme</a>
+            </li></ul>
+              
+            </li>
+            <li class="parent d-block "><a href="/nfsdoc/install/">Install</a>
+              <ul class="sub-menu">
+            <li class=" active "><a href="/nfsdoc/install/install/">Compile NFS</a>
+            </li></ul>
+              
+            </li></ul>
+            </nav>
+
+            
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="p-5 bg-white">
+            <h2>Compile NFS</h2>
+            
+
+<h1 id="compile-contrib">Compile Contrib</h1>
+
+<p>The original instructions from NFS say that we need to download and compile the following packages.</p>
+
+<ul>
+<li><a href="http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz">metis-5.1.0.tar.gz</a></li>
+<li><a href="https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.19/src/hdf5-1.8.19.tar.gz">hdf5-1.8.19.tar.gz</a></li>
+<li><a href="https://github.com/CGNS/CGNS/archive/v3.3.0.tar.gz">CGNS-3.3.0.tar.gz</a></li>
+<li><a href="http://www.mpich.org/static/downloads/3.2/mpich-3.2.tar.gz">mpich-3.2.tar.gz</a></li>
+</ul>
+
+<p>Here we compile only 3 of them, excluding mpich. Supercomputers like Tianhe-2 have their customized MPI environments. Using our own MPI will degrade the running speed.</p>
+
+<h2 id="file-structure">File Structure</h2>
+
+<pre><code>.
+├── contrib
+│   ├── cgns
+│   ├── hdf5
+│   └── metis
+├── contrib_src
+│   ├── cgns_src
+│   ├── hdf5_src
+│   └── metis_src
+└── NFS
+    ├── cmake
+    ├── contrib
+    ├── debug
+    ├── dev_utility
+    └── src
+</code></pre>
+
+<p>Before compiling the contrib packages, set the root dir.</p>
+
+<pre><code>export dir=/home/jcshi/Documents/nfs_project
+</code></pre>
+
+<p>Also check your compilation environments.</p>
+
+<pre><code>jcshi@BigMachine:~/Documents/_project$ which gcc
+/usr/bin/gcc
+jcshi@BigMachine:~/Documents/_project$ gcc --version
+gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
+Copyright (C) 2017 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+jcshi@BigMachine:~/Documents/_project$ which mpicc
+/usr/bin/mpicc
+jcshi@BigMachine:~/Documents/_project$ which mpif90
+/usr/bin/mpif90
+jcshi@BigMachine:~/Documents/_project$ mpichversion 
+MPICH Version:    	3.3a2
+MPICH Release date:	Sun Nov 13 09:12:11 MST 2016
+MPICH Device:    	ch3:nemesis
+MPICH configure: 	--build=x86_64-linux-gnu --prefix=/usr --includedir=${prefix}/include --mandir=${prefix}/share/man --infodir=${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libdir=${prefix}/lib/x86_64-linux-gnu --libexecdir=${prefix}/lib/x86_64-linux-gnu --disable-maintainer-mode --disable-dependency-tracking --with-libfabric --enable-shared --prefix=/usr --enable-fortran=all --disable-rpath --disable-wrapper-rpath --sysconfdir=/etc/mpich --libdir=/usr/lib/x86_64-linux-gnu --includedir=/usr/include/mpich --docdir=/usr/share/doc/mpich --with-hwloc-prefix=system --enable-checkpointing --with-hydra-ckpointlib=blcr CPPFLAGS= CFLAGS= CXXFLAGS= FFLAGS= FCFLAGS=
+MPICH CC: 	gcc  -g -O2 -fdebug-prefix-map=/build/mpich-O9at2o/mpich-3.3~a2=. -fstack-protector-strong -Wformat -Werror=format-security  -O2
+MPICH CXX: 	g++  -g -O2 -fdebug-prefix-map=/build/mpich-O9at2o/mpich-3.3~a2=. -fstack-protector-strong -Wformat -Werror=format-security -O2
+MPICH F77: 	gfortran  -g -O2 -fdebug-prefix-map=/build/mpich-O9at2o/mpich-3.3~a2=. -fstack-protector-strong -O2
+MPICH FC: 	gfortran  -g -O2 -fdebug-prefix-map=/build/mpich-O9at2o/mpich-3.3~a2=. -fstack-protector-strong -O2
+MPICH Custom Information: 	
+</code></pre>
+
+<h2 id="metis">Metis</h2>
+
+<pre><code>cd ${dir}/contrib_src
+wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz
+tar -xzvf metis-5.1.0.tar.gz
+cd metis-5.1.0
+make cc=gcc prefix=${dir}/contrib/metis config
+make
+make install
+cd ${dir}
+</code></pre>
+
+<h2 id="hdf5">HDF5</h2>
+
+<pre><code>cd ${dir}/contrib_src
+wget https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/hdf5-1.8.19/src/hdf5-1.8.19.tar.gz
+tar -xzvf hdf5-1.8.19.tar.gz
+cd hdf5-1.8.19
+mkdir -p build
+cd build
+cmake -DHDF5_BUILD_CPP_LIB:BOOL=OFF -DHDF5_BUILD_FORTRAN:BOOL=ON -DHDF5_ENABLE_PARALLEL:BOOL=ON -DCMAKE_INSTALL_PREFIX:STRING=${dir}/contrib/hdf5 -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_TESTING:BOOL=OFF -DHDF5_BUILD_EXAMPLES:BOOL=OFF -D CMAKE_C_COMPILER:STRING=gcc -D CMAKE_Fortran_COMPILER:STRING=gfortran ..
+make
+make install
+cd ${dir}
+</code></pre>
+
+<p>Here, the original instructions from NFS let you use the <code>configure</code> way of compiling applications. HDF5 officially offer 2 ways: <code>configure</code> way and <code>cmake</code> way. The <code>configure</code> way will not put the cmake files to the expected location thus cause an error of HDF5 package not found when using cmake configuring CGNS. So, we use the <code>cmake</code> way.</p>
+
+<h2 id="cgns">CGNS</h2>
+
+<pre><code>cd ${dir}/contrib_src
+wget https://github.com/CGNS/CGNS/archive/v3.3.0.tar.gz
+mv v3.3.0.tar.gz CGNS-3.3.0.tar.gz
+tar -xzvf CGNS-3.3.0.tar.gz
+cd CGNS-3.3.0
+mkdir -p build
+cd build
+export HDF5_DIR=${dir}/contrib/hdf5/share/cmake
+cmake -D CGNS_ENABLE_FORTRAN:BOOL=ON -D CGNS_ENABLE_HDF5:BOOL=ON -D HDF5_NEED_MPI:BOOL=ON -D CGNS_ENABLE_PARALLEL:BOOL=ON -D CMAKE_C_COMPILER:STRING=mpicc -D CMAKE_Fortran_COMPILER:STRING=mpif90 -D CMAKE_INSTALL_PREFIX:PATH=${dir}/contrib/cgns ..
+cd src/tools/CMakeFiles/cgnscheck.dir &amp;&amp; awk '{$NF=$NF&quot; -lhdf5&quot;; print}' link.txt &gt; link &amp;&amp; mv link link.txt &amp;&amp; cd -
+cd src/tools/CMakeFiles/cgnscompress.dir &amp;&amp; awk '{$NF=$NF&quot; -lhdf5&quot;; print}' link.txt &gt; link &amp;&amp; mv link link.txt &amp;&amp; cd -
+cd src/tools/CMakeFiles/cgnsconvert.dir &amp;&amp; awk '{$NF=$NF&quot; -lhdf5&quot;; print}' link.txt &gt; link &amp;&amp; mv link link.txt &amp;&amp; cd -
+cd src/tools/CMakeFiles/cgnsdiff.dir &amp;&amp; awk '{$NF=$NF&quot; -lhdf5&quot;; print}' link.txt &gt; link &amp;&amp; mv link link.txt &amp;&amp; cd -
+cd src/tools/CMakeFiles/cgnslist.dir &amp;&amp; awk '{$NF=$NF&quot; -lhdf5&quot;; print}' link.txt &gt; link &amp;&amp; mv link link.txt &amp;&amp; cd -
+export LIBRARY_PATH=${dir}/contrib/hdf5/lib
+make
+make install
+cd ${dir}
+</code></pre>
+
+<p>In the above shell operations, the files <code>link.txt</code> are appended with <code>-lhdf5</code> to resolve the issue of <code>unreferenced link to H5 functions</code> when linking those CGNS tools. In fact, at that stage, the static and shared library of CGNS are already compiled successfully.</p>
+
+<p>Also, the linking process requires HDF5 lib directory to be known to CGNS. Thus we <code>export LIBRARY_PATH</code>. Not sure why libhdf5 is still not found when CMake already finds where HDF5 locates.</p>
+
+<h1 id="compile-nfs">Compile NFS</h1>
+
+<p>The environments are set up by using CMake.</p>
+
+<pre><code>cd ${dir}/nfs
+bash dev_utility/cmake_init.sh debug
+cd debug
+make
+</code></pre>
+
+<p>Now, you have <code>nfs_dbg</code> in <code>${dir}/nfs/debug/bin/</code>. Run it!</p>
+
+            <p class="post-meta border-bottom pb-3 mb-0">Updated on May 30, 2019</p><nav class="pagination mt-3"><a class="nav nav-prev" href="/nfsdoc/install/" title="Install"><i class="ti-arrow-left mr-2"></i>Install</a>
+            <a class="nav nav-next" href="/nfsdoc/demo_cases/" title="Demo Cases">Demo Cases<i class="ti-arrow-right ml-2"></i></a>
+            </nav></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- footer -->
+<footer class="section bg-gray pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 text-md-left text-center">
+        <p>NFS are copyright © NPU CFD Group 2019.</p> 
+      </div>
+      <div class="col-md-4 text-md-right text-center">
+        <ul class="list-inline mb-3">
+          
+          <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="https://desperadoshi.github.io/"><i class="ti-facebook"></i></a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /footer -->
+
+<!-- Bootstrap JS -->
+<script src="https://desperadoshi.github.io/nfsdoc/plugins/bootstrap/bootstrap.min.js"></script>
+<!-- highlight -->
+<script src="https://desperadoshi.github.io/nfsdoc/plugins/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Main Script -->
+
+<script src="https://desperadoshi.github.io/nfsdoc/js/script.min.js"></script>

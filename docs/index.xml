@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NFS</title>
+    <link>https://desperadoshi.github.io/nfsdoc/</link>
+    <description>Recent content on NFS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>NFS are copyright © NPU CFD Group 2019.</copyright>
+    <lastBuildDate>Thu, 30 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://desperadoshi.github.io/nfsdoc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Base FR Configuration</title>
+      <link>https://desperadoshi.github.io/nfsdoc/inputs/base_fr_configuration/</link>
+      <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://desperadoshi.github.io/nfsdoc/inputs/base_fr_configuration/</guid>
+      <description>Base FR Configuration    Input Variable Type Default Value Note Description     solution_order integer 3 \ Specifies the degree of the polynomial space, $\mathcal{P_S}$, to use for the solution. NOTE: The order-of-accuracy is approximately $\mathcal{P_S}+1$.   loc_solution_pts integer 1 \ Specifies the location of the solution points used for tensor products. $\bullet$ 1 := Legendre-Gauss nodes. $\bullet$ 2 := Legendre-Gauss-Lobatto nodes.   invs_flux_method integer 1 \ Specifies the approximate Riemann solver used to compute the common inviscid fluxes at the interfaces.</description>
+    </item>
+    
+    <item>
+      <title>Boundary Conditions</title>
+      <link>https://desperadoshi.github.io/nfsdoc/inputs/boundary_conditions/</link>
+      <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://desperadoshi.github.io/nfsdoc/inputs/boundary_conditions/</guid>
+      <description>Boundary Conditions Base    Input Variable Type Default Value Note Description     bc_input bc_input_t \ \ Derived type to specify boundary conditions. An iterative loop will go through the specified flow conditions and try to compute the remaining unspecified flow conditions. NOTE: A run-time error will occur if either of the following conditions are true: A) The flow conditions are over-specified and inconsistent B) The flow conditions are under-specified and it is unable to compute the remaining unspecified flow conditions.</description>
+    </item>
+    
+    <item>
+      <title>Compile NFS</title>
+      <link>https://desperadoshi.github.io/nfsdoc/install/install/</link>
+      <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://desperadoshi.github.io/nfsdoc/install/install/</guid>
+      <description>Compile Contrib The original instructions from NFS say that we need to download and compile the following packages.
+ metis-5.1.0.tar.gz hdf5-1.8.19.tar.gz CGNS-3.3.0.tar.gz mpich-3.2.tar.gz  Here we compile only 3 of them, excluding mpich. Supercomputers like Tianhe-2 have their customized MPI environments. Using our own MPI will degrade the running speed.
+File Structure . ├── contrib │ ├── cgns │ ├── hdf5 │ └── metis ├── contrib_src │ ├── cgns_src │ ├── hdf5_src │ └── metis_src └── NFS ├── cmake ├── contrib ├── debug ├── dev_utility └── src  Before compiling the contrib packages, set the root dir.</description>
+    </item>
+    
+    <item>
+      <title>Grid File</title>
+      <link>https://desperadoshi.github.io/nfsdoc/inputs/grid_file/</link>
+      <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://desperadoshi.github.io/nfsdoc/inputs/grid_file/</guid>
+      <description>Grid File    Input Variable Type Default Value Note Description     grid_format integer 1 \ Specifies the format of the input grid file. $\bullet$ 1 := GMSH $\bullet$ 2 := CGNS   gridfile character(len=150) &amp;rdquo;&amp;rdquo; \ File path to the input grid file relative to the current directory.   metis_option integer 3 \ Specifies the METIS partitioning algorithm to use for partitioning the global grid.</description>
+    </item>
+    
+    <item>
+      <title>HiOCFD5 Vortex Transport</title>
+      <link>https://desperadoshi.github.io/nfsdoc/demo_cases/hiocfd5_vortex/</link>
+      <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://desperadoshi.github.io/nfsdoc/demo_cases/hiocfd5_vortex/</guid>
+      <description>Case Description This case is from the 5th International Workshop on High Order CFD Methods. Check its description from this webpage.
+This basic case is aimed at testing a high-order method’s capability to preserve vorticity in an unsteady inviscid flow.
+Results NFS employs SSP-RK3 as the time marching scheme. Although the original case document targets 50 periods of time to test the accuracy, here we target $1.5 \times 10^{-4}s$ for the comparison.</description>
+    </item>
+    
+    <item>
+      <title>Initialization</title>
+      <link>https://desperadoshi.github.io/nfsdoc/inputs/initialization/</link>
+      <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://desperadoshi.github.io/nfsdoc/inputs/initialization/</guid>
+      <description>Initialization    Input Variable Type Default Value Note Description     itestcase integer 1 \ Specifies the test-case/problem to solve, primarily affecting the initialization of the simulation. $\bullet$ 1 := Generic flow, initialize to reference conditions. $\bullet$ 2 := Diagonally propagating Shu version of the isentropic Euler vortex. $\bullet$ 3 := Channel flow (not working)   load_restart_file logical .FALSE. \ Logical flag used to indicate whether or not to read in a restart file.</description>
+    </item>
+    
+    <item>
+      <title>Physics and Equations</title>
+      <link>https://desperadoshi.github.io/nfsdoc/inputs/physics_and_equations/</link>
+      <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://desperadoshi.github.io/nfsdoc/inputs/physics_and_equations/</guid>
+      <description>Physics and Equations    Input Variable Type Default Value Note Description     governing_equations integer 2 \ Specifies the governing equations to use. $\bullet$ 1 := Euler equations $\bullet$ 2 := Navier-Stokes equations   machref real 0.4 \ Reference Mach number.   gam real 1.4 \ Reference $\gamma$ (ratio of specific heats).   ptotref real -1.0 \ Reference total pressure (units of Pa).</description>
+    </item>
+    
+    <item>
+      <title>Solution</title>
+      <link>https://desperadoshi.github.io/nfsdoc/inputs/solution/</link>
+      <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://desperadoshi.github.io/nfsdoc/inputs/solution/</guid>
+      <description>Solution    Input Variable Type Default Value Note Description     iter_out_interval integer 1 \ Number of time steps between writing time-stepping and residual/convergence statistics to standard output.   results_interval integer 0 \ Number of time steps between writing residual/convergence statistics for all conserved and primitive variables to the file results.dat.   output_interval integer -5 \ Number of time steps between writing CGNS solution files.</description>
+    </item>
+    
+    <item>
+      <title>Time Scheme</title>
+      <link>https://desperadoshi.github.io/nfsdoc/inputs/time_scheme/</link>
+      <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://desperadoshi.github.io/nfsdoc/inputs/time_scheme/</guid>
+      <description>Time Scheme    Input Variable Type Default Value Note Description     Runge_Kutta_Scheme integer 3 \ Specifies which Runge-Kutta method to use. $\bullet$ 1 := Classic n-stage RK method $\bullet$ 2 := 2-stage/2nd-order SSP-RK method $\bullet$ 3 := 3-stage/3rd-order SSP-RK method $\bullet$ 4 := 5-stage/4th-order SSP-RK method $\bullet$ 5 := 5-stage/4th-order Carpenter-Kennedy low storage RK method   num_timesteps integer 25000 \ Number of time steps for the simulation.</description>
+    </item>
+    
+  </channel>
+</rss>
