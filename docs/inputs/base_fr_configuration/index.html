@@ -222,6 +222,14 @@ code.has-jax {
 <td align="center">\</td>
 <td align="left">Specifies the method used to compute the common viscous fluxes at the interfaces. <br> $\bullet$ <code>1 :=</code> Bassi-Rebay 1 (BR1) (<span style="color:red">WARNING</span>: high chances of stability issues) <br> $\bullet$ <code>2 :=</code> Bassi-Rebay 2 (BR2) <br> $\bullet$ <code>3 :=</code> Local DG (LDG) (smaller CFL limit than BR2)</td>
 </tr>
+
+<tr>
+<td align="center"><code>limiter_option</code></td>
+<td align="center"><code>integer</code></td>
+<td align="center"><code>0</code></td>
+<td align="center">\</td>
+<td align="left">Limiter option. <br> $\bullet$ <code>0 :=</code> No limiter. <br> $\bullet$ <code>1 :=</code> Limit by projection using the resolution indicator. <br> $\bullet$ <code>2 :=</code> Limit by projection using the jump indicator.</td>
+</tr>
 </tbody>
 </table>
 
