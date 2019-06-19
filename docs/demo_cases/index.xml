@@ -15,12 +15,12 @@
     <item>
       <title>HiOCFD5 Vortex Transport</title>
       <link>https://desperadoshi.github.io/nfsdoc/demo_cases/hiocfd5_vortex/</link>
-      <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://desperadoshi.github.io/nfsdoc/demo_cases/hiocfd5_vortex/</guid>
       <description>Case Description This case is from the 5th International Workshop on High Order CFD Methods. Check its description from this webpage.
 This basic case is aimed at testing a high-order method’s capability to preserve vorticity in an unsteady inviscid flow.
-Results NFS employs SSP-RK3 as the time marching scheme. Although the original case document targets 50 periods of time to test the accuracy, here we target $1.5 \times 10^{-4}s$ for the comparison.</description>
+Results NFS employs SSP-RK3 as the time marching scheme. It runs 25 periods of time to test the accuracy. The $L_2$ error is in terms of the streamwise velocity.</description>
     </item>
     
   </channel>
