@@ -16,5 +16,5 @@ NFS employs SSP-RK3 as the time marching scheme. It runs 25 periods of time to t
 
 Using 3 grids under P3 and P4, NFS shows the following orders of accuracy.
 
-![Error VS. Grid size](HiOCFD5_Vortex/error_h.png)
+![Error VS. Grid size](demo_cases/HiOCFD5_Vortex/error_h.png)
 
