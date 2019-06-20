@@ -72,7 +72,7 @@
       <pubDate>Thu, 30 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://desperadoshi.github.io/nfsdoc/inputs/time_scheme/</guid>
-      <description>Time Scheme    Input Variable Type Default Value Note Description     Runge_Kutta_Scheme integer 3 \ Specifies which Runge-Kutta method to use. $\bullet$ 1 := Classic n-stage RK method $\bullet$ 2 := 2-stage/2nd-order SSP-RK method $\bullet$ 3 := 3-stage/3rd-order SSP-RK method $\bullet$ 4 := 5-stage/4th-order SSP-RK method $\bullet$ 5 := 5-stage/4th-order Carpenter-Kennedy low storage RK method   num_timesteps integer 25000 \ Number of time steps for the simulation.</description>
+      <description>Time Scheme    Input Variable Type Default Value Note Description     Time_Scheme integer 1 \ Specifies which time marching scheme to use. $\bullet$ 1 := Runge-Kutta scheme $\bullet$ 2 := Backward Differentiation Formula.   Runge_Kutta_Scheme integer 3 \ Specifies which Runge-Kutta method to use. $\bullet$ 1 := Classic n-stage RK method $\bullet$ 2 := 2-stage/2nd-order SSP-RK method $\bullet$ 3 := 3-stage/3rd-order SSP-RK method $\bullet$ 4 := 5-stage/4th-order SSP-RK method $\bullet$ 5 := 5-stage/4th-order Carpenter-Kennedy low storage RK method   num_timesteps integer 25000 \ Number of time steps for the simulation.</description>
     </item>
     
   </channel>
